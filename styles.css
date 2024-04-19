@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #caebf7; /* Light gray background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+    color: #000000cc; /* Dark gray heading */
+    font-size: 40px;
+  }
+  
+  .game {
+    background-color: #f5f9ff65; /* Light gray background */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  /* Animate game container */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 2px;
+    margin: 40px auto;
+    position: relative;
+    /* width: 320px;
+    height: 320px; */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell {
+    width: 100%;
+    height: 100%;
+    background-color: #07202b25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    border: #33333307 solid 2px;
+  }
+  
+  /* .cell:hover {
+    background-color: #a32727; /* Slightly darker gray on hover 
+  }*/
+  .cell.X::after,
+  .cell.O::after {
+    content: attr(data-symbol); /* Use the data-symbol attribute for the content */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #d31111; /* Dark gray symbol color */
+    font-size: 48px; /* Adjust size as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .status {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #013131; /* Dark gray status text */
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #1691c5fa; /* Light blue button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 22px;
+    transition: background-color 0.1s ease;
+  }
+  
+  .btn:hover {
+    background-color: #05851d; /* Slightly darker blue on hover */
+  }
+  
